@@ -11,6 +11,10 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
+		// 用于导入要使用的模板
+		"usingComponents": {
+			// "van-action-sheet": "/wxcomponents/dist/action-sheet/index"
+		},
 		"backgroundColor": "#F8F8F8"
 	},
 	"uniIdRouter": {}
