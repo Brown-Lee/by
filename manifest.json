@@ -134,26 +134,6 @@
             "enable" : true
         }
     },
-    "h5" : {
-        "template" : "template.h5.html",
-        "router" : {
-            "mode" : "history",
-            "base" : ""
-        },
-        "sdkConfigs" : {
-            "maps" : {
-                "qqmap" : {
-                    "key" : "TKUBZ-D24AF-GJ4JY-JDVM2-IBYKK-KEBCU"
-                }
-            }
-        },
-        "async" : {
-            "timeout" : 20000
-        },
-        "uniStatistics" : {
-            "enable" : true
-        }
-    },
     "vueVersion" : "3",
     "mp-kuaishou" : {
         "uniStatistics" : {
@@ -181,7 +161,7 @@
         }
     },
     "uniStatistics" : {
-        "version" : "2",
+        "version" : "3",
         "enable" : true
     }
 }
