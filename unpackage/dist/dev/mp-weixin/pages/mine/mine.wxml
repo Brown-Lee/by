@@ -1,0 +1,1 @@
+<view class="mine_nav"><input type="text" placeholder="请输入账号"></input><input type="safe-password" password placeholder="请输入密码"></input></view>

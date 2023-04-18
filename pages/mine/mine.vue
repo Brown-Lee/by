@@ -1,6 +1,6 @@
 <template>
-	<view>
-		
+	<view class="">
+		{{num}}
 	</view>
 </template>
 
@@ -8,15 +8,19 @@
 	export default {
 		data() {
 			return {
-				
+num:10
 			}
 		},
+		onLoad() {
+			 uni.navigateTo({
+			 	url: "/pages/login/login"
+			 })
+		},
 		methods: {
-			
+
+
 		}
 	}
 </script>
-
 <style>
-
 </style>

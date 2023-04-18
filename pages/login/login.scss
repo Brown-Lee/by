@@ -1,0 +1,20 @@
+.login_nav{
+	.login_info{ 
+		width: 500rpx;  
+		border-radius: 8rpx;
+		margin: 0 auto; 
+		border: 5rpx solid #000;
+		padding: 50rpx;
+		button{
+			width: 200rpx;
+			display: inline-block;
+			margin: 0 auto;
+			&:nth-of-type(1){
+				margin-right: 30px;
+			}
+		}
+	} 
+}
+	.i_b{
+		display: inline-block;
+	}
