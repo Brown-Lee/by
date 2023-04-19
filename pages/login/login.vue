@@ -16,8 +16,8 @@
 				<view class="acc">
 					<view class="accText">
 						密码:
-					</view><input type="safe-password" passwordp v-model="password" placeholder="请输入密码">
-				</view> 
+					</view><input type="safe-password" password v-model="password" placeholder="请输入密码">
+				</view>
 				<navigator class="register" url="../register/register">
 					还没有账号,去注册 --></navigator>
 				<view class="login_loginBtn">
@@ -33,11 +33,8 @@
 					</view>
 				</view>
 			</view>
-		</view>
-
-	</view>
-
-
+		</view> 
+	</view> 
 </template>
 
 <script>
@@ -49,7 +46,7 @@
 				userName: "",
 				password: "",
 				toggleFlag: false,
-				informFlag :false
+				informFlag: false
 			}
 		},
 		methods: {
@@ -77,18 +74,18 @@
 						}
 					}).then(res => {
 						console.log(res);
-						if (res.data.code == 1 && res.data.token !== null) {
+						if (res.code == 1 && res.token !== null) {
 							uni.setStorage({
 								key: "token",
-								data: res.data.token
+								data: res.token
 							})
 							uni.setStorage({
 								key: "useId",
-								data: JSON.stringify(res.data.userId)
+								data: JSON.stringify(res.userId)
 							})
 							uni.setStorage({
 								key: "userName",
-								data: res.data.userName
+								data: res.userName
 							})
 							uni.showToast({
 								title: "登陆成功",
@@ -96,6 +93,11 @@
 							})
 							this.password = ''
 							this.userName = ''
+
+							uni.navigateTo({
+								url: '/pages/mine/mine'
+							})
+
 						} else {
 							uni.showToast({
 								title: "用户名或密码错误",
@@ -111,7 +113,7 @@
 			toggleFlagFun() {
 				this.toggleFlag = !this.toggleFlag
 			},
-			informFlagFun(){
+			informFlagFun() {
 				this.informFlag = true
 			},
 		},
