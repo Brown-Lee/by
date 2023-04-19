@@ -45,6 +45,8 @@
 		"color": "#7A7E83",
 		"selectedColor": "#007AFF",
 		"borderStyle": "black",
+		// 优化 底部导航栏 字体的问题
+		"fontSize": "32rpx",
 		"backgroundColor": "#F8F8F8",
 		"list": [{
 				"pagePath": "pages/index/index",

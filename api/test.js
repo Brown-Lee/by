@@ -1,11 +1,13 @@
+// 用于测试 pc 端 与 移动端 的数据接口
+
 export default (obj) => {
 	return new Promise((resolve, reject) => {
 		uni.request({
-			url: `http://47.113.230.184:9527/api${obj.url}`,
+			url: `https://h5.biyao.com/api${obj.url}`,
 			method:obj.method || 'GET',
-			data: obj.data,
+			data: JSON.stringify(obj.data),
 			success: (res) => {
-				resolve(res.data)
+				resolve(res)
 			},
 			fail: (err) => {
 				reject(err)
