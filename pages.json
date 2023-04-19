@@ -28,7 +28,25 @@
 				"navigationBarTitleText": "注册"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/history/history",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "历史记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/result/result",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"pageOrientation": "portrait",
 		"navigationBarTitleText": "Hello uniapp",
