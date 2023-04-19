@@ -9,7 +9,6 @@
 		font-weight:bold;
 		text:nth-of-type(2){
 			color: #999999;
-			cursor: pointer;
 		}
 	}
 	.login_info{  
@@ -27,6 +26,7 @@
 			}
 		}
 	} 
+	
 	.login_logoBox{
 		width: 100%;
 		.login_img{
@@ -68,7 +68,6 @@
 					width: 460rpx;
 					height: 80rpx;
 					border-radius: 80rpx;
-					cursor: pointer; 
 					background: -webkit-linear-gradient(left,#9a78ff,#9c2bff) no-repeat;
 				}
 				.login_loginText{
