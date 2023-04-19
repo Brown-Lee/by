@@ -19,13 +19,13 @@
 				padding: 7px 20px;
 				box-sizing: border-box;
 
-				.input {
+				.search {
 					height: 30px;
 					border-radius: 20px;
 					padding: 5px 20px;
 					font-size: 12px;
 					background-color: #eee;
-					line-height: 50px;
+					line-height: 20px;
 					box-sizing: border-box;
 				}
 			}
@@ -108,7 +108,7 @@
 	<view class="home">
 		<view class="fixed">
 			<view class="home_input">
-				<input type="text" maxlength="20" class="input" placeholder="请输入您想要的商品">
+				<view class="search" @click="onNavigate">请输入您想要的商品</view>
 			</view>
 			<view class="home_group">
 				<template v-for="item, i in groups" :key="i">
@@ -170,6 +170,11 @@
 		},
 		computed: {},
 		methods: {
+			onNavigate(){
+				uni.navigateTo({
+					url:'/pages/history/history'
+				})
+			},
 			fn() {
 				if (window.scrollY + 200 >= this.$refs.listRef.$el.offsetHeight) {
 					if (this.bool) {
