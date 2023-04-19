@@ -1,0 +1,208 @@
+.category{
+	    min-height: 100% !important;
+	    background: #fff !important;
+}
+.search-input-container{
+	width: 100%;
+	    background: #fff;
+	    padding-top: 10rpx;
+	    padding-bottom: 12rpx;
+		border-bottom: #bbb 1rpx solid;
+		position: fixed;
+}
+.search-input{
+	    width: 710px;
+	    height: 30px;
+	    margin: 0 auto;
+	    background: #f4f4f4;
+	    border-radius: 13px;
+	    overflow: hidden;
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-box-pack: start;
+	    -webkit-justify-content: flex-start;
+	    justify-content: flex-start;
+	    -webkit-box-align: center;
+	    -webkit-align-items: center;
+	    align-items: center;
+}
+.searchIcon{
+	    font-family: PingFangSC-Regular;
+	    color: #bbb;
+		    display: inline-block;
+		    width: 36rpx;
+		    height: 36rpx;
+		    line-height: 0.36rem;
+		    margin: 0 10px 0 12rpx;
+		    color: gray;
+		    background-size: 100%;
+}
+.searchIcon image{
+	width: 100%;
+	height: 100%;
+}
+.searchIcon_text{
+	font-family: PingFangSC-Regular;
+	    font-size: 12rpx;
+	    color: #bbb;
+}
+.section-classify{
+	    background: #fff;
+	    border-top: 0.02rem solid #cccccc;
+}
+
+.section-firstCate{
+	    position: fixed;
+	    left: 0;
+	    top: 173rpx;
+	    bottom: 90rpx;
+	    z-index: 2;
+	    box-sizing: border-box;
+	    width: 172rpx;
+	    overflow: hidden;
+	    background: #f7f7f7;
+}
+
+.byui-scroll-wrapper{
+	    height: 100%;
+	    overflow: scroll;
+		    position: relative;
+}
+.byui-scroll-content{
+	    display: inline-block;
+	    overflow: hidden;
+	    z-index: 1;
+}
+.byui-scroll-content_ul{
+	    width: 170rpx;
+}
+.byui-scroll-content_ul_li{
+	    width: 170rpx;
+	    height: 90rpx;
+		line-height: 75rpx;
+	    font-size: 12rpx;
+	    color: #4a4a4a;
+	    text-align: center;
+	    box-sizing: border-box;
+	    padding: 12rpx 0;
+}
+.firstCateActive{
+	    color: #7f4395;
+	    font-family: PingFangSC-Semibold;
+	    font-size: 13px;
+	    background: #fff;
+		display: inline-block;
+		    // height: 0.42rem;
+		    // line-height: 0.42rem;
+		    border-left: 4px solid #7f4395;
+}
+.byui-scroll-content_ul_li_view{
+	width: 170rpx;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+}
+.section-cateList{
+	    position: absolute;
+	    left: 0;
+	    top: 85rpx;
+	    z-index: 2;
+	    box-sizing: border-box;
+	    width: 569rpx;
+	    bottom: 90rpx;
+	    left: 180rpx;
+	    padding-bottom: 1rpx;
+}
+.byui-scroll-wrapper{
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+	    // overflow: hidden;
+}
+.byui-scroll-content{
+	    display: inline-block;
+	    overflow: hidden;
+	    z-index: 1;
+}
+.byui-scroll-content_ul{
+	width: 536rpx;
+	height: 100%;
+}
+.cateList-first_li{
+	display: block;
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+	    overflow: hidden;
+	    background-color: #fff;
+	   
+}
+.first-cateList-item{
+	font-family: PingFangSC-Semibold;
+	    // font-size: 18rpx;
+	    color: #4a4a4a;
+	    height: 90rpx;
+		    display: flex;
+	    -webkit-box-align: center;
+	    align-items: center;
+	    -webkit-box-pack: center;
+	    justify-content: center;
+	    position: relative;
+}
+.first-cateList-name-before{
+	    height: 2rpx;
+	    width: 15rpx;
+		line-height: 2rpx;
+		margin-right: 7rpx;
+
+}
+.first-cateList-name{
+	    max-width: 200rpx;
+	    position: relative;
+	    margin: 0 20rpx;
+		font-size: 30rpx;
+	color: #4A4A4A;
+	font-weight: 550;
+}
+.first-cateList-name-after{
+	height: 2rpx;
+	width: 15rpx;
+	line-height: 2rpx;
+}
+.ul{
+	width: 100%;
+	height: 100%;
+}
+	
+.cateList-second{
+width: 100%;
+	height: 100%;
+}
+.list-hd-wrap{
+	height:100%;
+	    position: relative;
+	    font-size: 12px;
+	    font-family: PingFangSC-Semibold;
+	    color: #4a4a4a;
+	    box-sizing: border-box;
+	    padding: 0 13px 12rpx 12rpx;
+}
+.list-hd{
+	    height: 150rpx;
+	    border-bottom: 1rpx solid #f3f3f3;
+	    line-height: 150rpx;
+	    -webkit-box-pack: justify;
+	    justify-content: space-between;
+	    -webkit-justify-content: space-between;
+		display: flex;
+}
+.list-hd-name{
+	width: 240rpx;
+	
+}
+.list-hd-more{
+	font-family: PingFangSC-Regular;
+	    font-size: 13rpx;
+	    color: #999999;
+}

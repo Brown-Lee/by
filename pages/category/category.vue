@@ -1,9 +1,9 @@
 <template>
 	<view class="category">
 		<view class="search-input-container">
-			<view class="search-input">
+			<view class="search-input" @click="sosuo()">
 				<text class="searchIcon">
-					<image src="/static//sosuo.png" mode=""></image>
+					<image src="/static//fdj.png" webp mode="widthFix heightFix"></image>
 				</text>
 				<text class="searchIcon_text">请输入你想要的商品</text>
 			</view>
@@ -12,20 +12,21 @@
 		<view class="section-classify">
 			<view class="section-firstCate">
 				<view class="byui-scroll-wrapper">
-					<scroll-view scroll-y="1000">
-					<view class="byui-scroll-content">
-						<view class="byui-scroll-content_ul">
-							<view :class="['byui-scroll-content_ul_li', activenum==index?'firstCateActive':'']" v-for="(item,index) in list" key="{{index}}" @click="actives(index)">
-								<view class="byui-scroll-content_ul_li_view" @click="golist(item)">{{item}}</view>
+					<scroll-view scroll-y="1000" style="100%">
+						<view class="byui-scroll-content">
+							<view class="byui-scroll-content_ul">
+								<view :class="['byui-scroll-content_ul_li', activenum==index?'firstCateActive':'']"
+									v-for="(item,index) in list" key="{{index}}" @click="actives(index)">
+									<view class="byui-scroll-content_ul_li_view" @click="golist(item)">{{item}}</view>
+								</view>
 							</view>
 						</view>
-					</view>
-				</scroll-view>
+					</scroll-view>
 				</view>
 			</view>
-			
-				<view class="section-cateList">
-					<scroll-view scroll-y style="height: 100%;">
+
+			<view class="section-cateList">
+				<scroll-view scroll-y style="height: 100%;">
 					<view class="byui-scroll-wrapper">
 						<view class="byui-scroll-content">
 							<view class="byui-scroll-content_ul" style="pointer-events: auto;">
@@ -40,7 +41,7 @@
 											<view class="cateList-second">
 												<view class="list-hd-wrap">
 													<view class="list-hd" v-for="(item,index) in list_title"
-														key="{{index}}">
+														key="{{index}}" @click="gotwoDetail(list_title2,item)">
 														<view class="list-hd-name">{{item}}</view>
 														<view class="list-hd-more">更多 ＞</view>
 													</view>
@@ -64,9 +65,9 @@
 							</view>
 						</view>
 					</view>
-						</scroll-view>
-				</view>
-	
+				</scroll-view>
+			</view>
+
 		</view>
 	</view>
 </template>
@@ -78,14 +79,25 @@
 			return {
 				list: [],
 				list_title2: [],
+				list_title3: [],
 				list_title: [],
 				list_seller: [],
-				activenum:0
+				activenum: 0
 			}
 		},
 		methods: {
-			actives(i){
-				this.activenum=i
+			gotwoDetail(id,item){
+				uni.navigateTo({
+					url:`/pages/result/result?search=${id}`
+				})
+			},
+			sosuo() {
+				uni.navigateTo({
+					url: "/pages/history/history"
+				})
+			},
+			actives(i) {
+				this.activenum = i
 			},
 			golist(id) {
 				this.list_title2 = id
@@ -138,13 +150,26 @@
 					console.log(res);
 					this.list = res
 					this.list_title2 = res[0]
-
+					this.list_title3=res[0]
 				})
-			}
+			},
+			onData2() {
+				api({
+					url: `/getTypeTwo`,
+					data: {
+						type_one: '个护'
+					}
+				}).then((res) => {
+					console.log(res);
+					this.list_title = res
+				
+				})
+			},
 		},
 		onLoad() {
 			this.onData()
-			this.golist()
+			this.onData2()
+			
 		}
 
 	}
