@@ -1,10 +1,15 @@
 <style lang="scss">
 	.result {
 		width: 100%;
+		position: relative;
 		background-color: #eee;
 
 		.result_title {
 			width: 100%;
+			position: fixed;
+			top: 80rpx;
+			left: 0;
+			z-index: 9;
 			background-color: #eee;
 
 			.title {
@@ -25,14 +30,12 @@
 				}
 
 				&::-webkit-scrollbar-thumb {
-					height: 2px !important;
 					border-radius: 8px;
 					background: #eee;
-					border-top: 1px solid #a6a6a6;
+					border-bottom: 1px solid #a6a6a6;
 				}
 
 				.mini_title {
-					// width: 700px;
 					height: 60rpx;
 					padding: 0 20rpx;
 					white-space: nowrap;
@@ -61,6 +64,7 @@
 		.goods {
 			width: 100%;
 			padding: 20rpx;
+			padding-top: 150rpx;
 			box-sizing: border-box;
 
 			.goods_item {
@@ -101,8 +105,8 @@
 					.price {
 						color: #F7A701;
 					}
-					
-					.evaluate{
+
+					.evaluate {
 						font-size: 16rpx;
 						color: #a6a6a6;
 					}
@@ -118,14 +122,15 @@
 			<view class="content">
 				<view class="mini_title" :style="{width: ((titles.length * 100) + 100) + 'px'}">
 					<template v-for="item, i in titles" :key="i">
-						<text :class="index == i ? 'active title_item' : 'title_item'">{{ item }}</text>
+						<text :class="index == i ? 'active title_item' : 'title_item'"
+							@click="onActive(i)">{{ item }}</text>
 					</template>
 				</view>
 			</view>
 		</view>
 		<view class="goods">
 			<template v-for="item in list" :key="item.Id">
-				<div class="goods_item">
+				<div class="goods_item" @click="onNavigate(item.Id)">
 					<image class="cover" :src="item.imageUrl" mode="heightFix"></image>
 					<view class="info">
 						<view class="title">{{ item.title }}</view>
@@ -154,7 +159,19 @@
 			}
 		},
 		methods: {
+			onActive(i) {
+				if (this.index !== i) {
+					this.index = i
+					this.onData(this.search)
+				}
+			},
+			onNavigate(id) {
+				uni.navigateTo({
+					url: `/pages/detail/detail?id=${id}`
+				})
+			},
 			onData(search) {
+				this.list = []
 				request({
 					url: `/search?word=${search}`
 				}).then(res => {
@@ -163,7 +180,6 @@
 							this.list.push(item)
 						}
 					})
-					console.log(this.list);
 				})
 			},
 			onInit(search) {
