@@ -176,9 +176,10 @@
 					url: `/search?word=${search}`
 				}).then(res => {
 					res.forEach(item => {
-						if (item.type_two == this.titles[this.index]) {
+						// console.log(item);
+						// if (item.type_two == this.titles[this.index]) {
 							this.list.push(item)
-						}
+						// }
 					})
 				})
 			},
