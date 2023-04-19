@@ -8,7 +8,7 @@
 // service.interceptors.response.use(response => response)
 // export default service;
 
-export default (obj) => {
+export default (obj) => { 
 	return new Promise((resolve, reject) => {
 		uni.request({
 			url: `http://47.113.230.184:9527/api${obj.url}`,
@@ -16,9 +16,9 @@ export default (obj) => {
 			header:{
 				UserAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0"
 			},
-			data: JSON.stringify(obj.data),
+			data:  obj.data,
 			success: (res) => {
-				resolve(res)
+				resolve(res.data)
 			},
 			fail: (err) => {
 				reject(err)

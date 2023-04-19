@@ -1,21 +1,34 @@
 <template>
 	<view class="">
-		{{num}}
+		我的
 	</view>
 </template>
 
 <script>
+	import request from '../../api/index.js'
 	export default {
 		data() {
 			return {
-num:10
+				token: ""
 			}
 		},
-		onLoad() {
-			 uni.navigateTo({
-			 	url: "/pages/login/login"
-			 })
-		},
+		onLoad() { 
+			uni.getStorage({
+				key: "token",
+				success: (res) => {
+					console.log(res.data);
+					this.token = res.data
+				}
+			})
+			if (!this.token) {
+				uni.navigateTo({
+					url: "/pages/login/login"
+				})
+			}else{
+				return
+			} 
+		}, 
+		
 		methods: {
 
 
