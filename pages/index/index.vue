@@ -135,7 +135,7 @@
 		</view>
 		<view class="list" ref="listRef">
 			<template v-for="item in list" :key="item.Id">
-				<view class="list_item">
+				<view class="list_item" @click="onDetail(item.Id)">
 					<image class="list_item_img" :src="item.imageUrl" mode="center"></image>
 					<view class="title">{{ item.title }}</view>
 					<view class="price">￥{{ item.priceStr }}</view>
@@ -170,6 +170,11 @@
 		},
 		computed: {},
 		methods: {
+			onDetail(id){
+				uni.navigateTo({
+					url:`/pages/detail/detail?id=${id}`
+				})
+			},
 			onNavigate(){
 				uni.navigateTo({
 					url:'/pages/history/history'

@@ -152,6 +152,7 @@
 	export default {
 		data() {
 			return {
+				size: 1,
 				index: 0,
 				search: '',
 				titles: [],
@@ -172,15 +173,11 @@
 			},
 			onData(search) {
 				this.list = []
+				console.log(this.titles[0]);
 				request({
-					url: `/search?word=${search}`
+					url: `/getTypeTwoList?type_one=${search}&type_two=${this.titles[this.index]}`
 				}).then(res => {
-					res.forEach(item => {
-						// console.log(item);
-						// if (item.type_two == this.titles[this.index]) {
-							this.list.push(item)
-						// }
-					})
+					this.list = res
 				})
 			},
 			onInit(search) {
@@ -188,14 +185,13 @@
 				request({
 					url: `/getTypeTwo?type_one=${search}`
 				}).then(res => {
-					console.log(res);
 					this.titles = res
+					this.onData(search)
 				})
 			}
 		},
 		onLoad(option) {
 			this.onInit(option.search)
-			this.onData(option.search)
 		}
 	}
 </script>
