@@ -7,11 +7,11 @@
     "transformPx" : false,
 	// "h5": {
 	// 	"devServer": {
-	// 		"https": false,
+	// 		"https": false, // 是否开启 https 代理
 	// 		"proxy":{
 	// 			"/api": {
-	// 				"target": "http://47.113.230.184:9527",
-	// 				"changeOrigin": true,
+	// 				"target": "你想要对接的后端接口",
+	// 				"changeOrigin": true, // 是否改变源信息
 	// 				"secure": false,
 	// 				"pathRewrite": {
 	// 					"^/api": ""
