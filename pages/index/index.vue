@@ -148,7 +148,6 @@
 
 <script>
 	// 测试接口
-	import UNI from '@/api/test.js';
 	import request from '@/api/index.js';
 	export default {
 		data() {

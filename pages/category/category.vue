@@ -46,7 +46,7 @@
 														<view class="list-hd-more">更多 ＞</view>
 													</view>
 												</view>
-												<view class="clear" v-for="(item2,index2) in list_seller[index]"
+												<view class="clear" v-for="(item2,index2) in list_seller"
 													key="{{index2}}">
 													<view class="cateList-third" v-for="(item3,index3) in j"
 														key="index3">
